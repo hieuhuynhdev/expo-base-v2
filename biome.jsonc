@@ -1,0 +1,123 @@
+{
+  /* Allows to pass a path to a JSON schema file */
+  "$schema": "https://biomejs.dev/schemas/2.2.6/schema.json",
+
+  // disable Biome’s sort imports.
+  "assist": { "actions": { "source": { "organizeImports": "off" } } },
+
+  /* Biome's formatter configuration */
+  "formatter": {
+    /* Enables Biome’s formatter for all languages */
+    "enabled": true,
+    /* Allows to format a document that has syntax errors */
+    "formatWithErrors": false,
+    /* The style of the indentation. It can be "tab" or "space" */
+    "indentStyle": "space",
+    /* How big the indentation should be */
+    "indentWidth": 2,
+    /* The type of line ending
+       - "lf", Line Feed only (\n), common on Linux and macOS as well as inside git repos
+       - "crlf", Carriage Return + Line Feed characters (\r\n), common on Windows
+       - "cr", Carriage Return character only (\r), used very rarely */
+    "lineEnding": "lf",
+    /* How many characters can be written on a single line */
+    "lineWidth": 80,
+    /* The attribute position style in HTMLish languages
+       - "auto", the attributes are automatically formatted, and they will collapse in multiple lines only when they hit certain criteria;
+       - "multiline", the attributes are always formatted on multiple lines, regardless */
+    "attributePosition": "auto"
+  },
+
+  /* Biome's linter configuration */
+  "linter": {
+    /* Enables Biome’s linter */
+    "enabled": true,
+    "rules": {
+      /* Enables the recommended rules for all groups: https://biomejs.dev/linter/rules/#recommended-rules */
+      "recommended": true,
+      /* Rules that detect code that is guaranteed to be incorrect or useless */
+      "correctness": {
+        "noUnusedImports": "error", // Disallow unused imports
+        "noUnusedVariables": "error", // Disallow unused variables
+        "noUndeclaredVariables": "error", // Prevents the usage of variables that haven’t been declared inside the document
+        "useHookAtTopLevel": "error", // Enforce that all React hooks are being called from the Top Level component functions
+        "useExhaustiveDependencies": "off", // Enforce that all dependencies are being used in the dependency array of React hooks
+        "noMissingVarFunction": "error", // Disallow missing var function for css variables
+        "noUnknownPseudoElement": "error", // Disallow unknown pseudo-element selectors in css
+        "noUnknownTypeSelector": "error" // Disallow unknown type selectors in css
+      },
+      /* New rules */
+      "complexity": {
+        "noUselessEscapeInRegex": "error" // Disallow unnecessary escape sequence in regular expression literals
+      },
+      "a11y": {
+        "useAriaPropsSupportedByRole": "error" // Enforce that ARIA properties are valid for the roles that are supported by the HTML element
+      },
+      /* Rules enforcing a consistent and idiomatic way of writing your code */
+      "style": {
+        "useDefaultParameterLast": "off", // Enforce default function parameters and optional function parameters to be last.
+        "useNodejsImportProtocol": "off", // Disable the enforcement to use the `node:protocol` for importing Node.js built-in modules.
+        "useFragmentSyntax": "error", // Enforces the use of <>...</> over <Fragment>...</Fragment>
+        "noCommonJs": "error" // Disallow use of CommonJs module system in favor of ESM style imports
+      },
+      /* Rules that detect code that is likely to be incorrect or useless */
+      "suspicious": {
+        "noExplicitAny": "off", // Disallow the any type usage
+        "noImplicitAnyLet": "off", // Disallow use of implicit any type on variable declarations
+        "noConsole": "error",
+        "noArrayIndexKey": "off", // Disallow array index as key in React components
+        "noDuplicateElseIf": "error", // Disallow duplicate conditions in if-else-if chains'
+        "noDuplicateCustomProperties": "error", // Disallow duplicate custom properties within declaration blocks in css
+        "noDuplicateProperties": "error", // Disallow duplicate properties within declaration blocks in css
+        "useGoogleFontDisplay": "error" // Enforces the use of a recommended `display` strategy with Google Fonts
+      }
+    }
+  },
+
+  /* Configuration apply only to JavaScript files */
+  "javascript": {
+    "formatter": {
+      /* The type of quote used when representing string literals. It can be "single" or "double" */
+      "quoteStyle": "single",
+      /* The type of quote used when representing jsx string literals. It can be "single" or "double" */
+      "jsxQuoteStyle": "double",
+      /* When properties inside objects should be quoted. It can be "asNeeded" or "preserve" */
+      "quoteProperties": "asNeeded",
+      /* Print trailing commas wherever possible in multi-line comma-separated syntactic structures
+         - "all", the trailing comma is always added
+         - "es5", the trailing comma is added only in places where it’s supported by older version of JavaScript
+         - "none", trailing commas are never added */
+      "trailingCommas": "all",
+      /* It configures where the formatter prints semicolons
+         - "always", the semicolons is always added at the end of each statement
+         - "asNeeded", the semicolons are added only in places where it’s needed,
+           to protect from ASI (https://en.wikibooks.org/wiki/JavaScript/Automatic_semicolon_insertion) */
+      "semicolons": "asNeeded",
+      /* Whether to add non-necessary parentheses to arrow functions
+         - "always", the parentheses are always added
+         - "asNeeded", the parentheses are added only when they are needed */
+      "arrowParentheses": "always",
+      /* Choose whether the ending > of a multi-line JSX element should be on the last attribute line or not */
+      "bracketSameLine": false,
+      /* Choose whether spaces should be added between brackets and inner values */
+      "bracketSpacing": true,
+      /* The attribute position style in jsx elements
+         - "auto", the attributes are automatically formatted, and they will collapse in multiple lines only when they hit certain criteria
+         - "multiline", the attributes are always formatted on multiple lines, regardless */
+      "attributePosition": "auto"
+    }
+  },
+
+  /* Configuration apply only to JSON files */
+  "json": {
+    "parser": {
+      /* Enables the parsing of comments in JSON files */
+      "allowComments": true
+    }
+  },
+
+  "files": {
+    /* A list of Unix shell style patterns. Biome handles only the files and folders that match these patterns */
+    "includes": ["app/", "src/"]
+  }
+}
