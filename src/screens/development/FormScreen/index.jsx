@@ -1,8 +1,10 @@
-import { Form, Input, YStack, Button } from "tamagui";
-
+import { Form, YStack, Button } from "tamagui";
 import { joiResolver } from "@hookform/resolvers/joi";
 import { useForm, useFormContext, FormProvider } from "react-hook-form";
 import * as joi from "joi";
+
+// forms
+import InputField from "@/forms/fields/InputField";
 
 // form schema
 const formSchema = joi.object({
@@ -16,9 +18,22 @@ const LoginForm = () => {
 
   return (
     <Form>
-      <YStack gap="$5">
-        <Input placeholder="Username" />
-        <Input placeholder="Password" />
+      <YStack gap="$2">
+        {/* username */}
+        <InputField
+          name="username"
+          label="Username"
+          inputProps={{ placeholder: "Username" }}
+        />
+
+        {/* password */}
+        <InputField
+          name="password"
+          label="Password"
+          inputProps={{ placeholder: "Password" }}
+        />
+
+        {/* submit button */}
         <Button
           size="$3"
           themeInverse
