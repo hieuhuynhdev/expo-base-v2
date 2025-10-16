@@ -1,20 +1,28 @@
+import React from "react";
+import { TamaguiProvider, Theme } from "tamagui";
+import tamaguiConfig from "../tamagui.config";
+import { useColorScheme } from "react-native";
 import { Icon, Label, NativeTabs } from "expo-router/unstable-native-tabs";
 
-// layouts
+export default function RootLayout() {
+  const scheme = useColorScheme();
+  const themeName = scheme === "dark" ? "dark" : "light";
 
-export const TabLayout = () => {
   return (
-      <NativeTabs>
-        <NativeTabs.Trigger name="home">
-          <Label>Home</Label>
-          <Icon sf="house.fill" drawable="custom_android_drawable" />
-        </NativeTabs.Trigger>
-        <NativeTabs.Trigger name="development">
-          <Label>Development</Label>
-          <Icon sf="laser.burst" drawable="custom_android_drawable" />
-        </NativeTabs.Trigger>
-      </NativeTabs>
-  );
-};
+    <TamaguiProvider config={tamaguiConfig}>
+      <Theme name={themeName}>
+        <NativeTabs>
+          <NativeTabs.Trigger name="home">
+            <Label>Home</Label>
+            <Icon sf="house.fill" />
+          </NativeTabs.Trigger>
 
-export default TabLayout;
+          <NativeTabs.Trigger name="tamagui">
+            <Label>Tamagui</Label>
+            <Icon sf="hammer.fill" />
+          </NativeTabs.Trigger>
+        </NativeTabs>
+      </Theme>
+    </TamaguiProvider>
+  );
+}

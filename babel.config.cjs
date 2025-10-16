@@ -11,8 +11,8 @@ module.exports = (api) => {
       ],
     ],
     plugins: [
-      // Must come before the nativewind plugin
       "@expo/html-elements/babel",
+      "@tamagui/babel-plugin",
     ],
   };
 };
