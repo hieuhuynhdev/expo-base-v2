@@ -15,9 +15,22 @@ export const IndexScreen = () => {
   }, [navigation]);
 
   return (
-    <YStack f={1} jc="center" ai="center" p="$4" gap="$3">
+    <YStack f={1} p="$4" gap="$3">
       <Text>Tamagui UI Kit</Text>
-      <Button onPress={() => router.push("/tamagui/button")}>Button</Button>
+      <Button
+        onPress={() => router.push("/tamagui/text")}
+        themeInverse
+        size="$3"
+      >
+        Text
+      </Button>
+      <Button
+        onPress={() => router.push("/tamagui/button")}
+        themeInverse
+        size="$3"
+      >
+        Button
+      </Button>
     </YStack>
   );
 };
