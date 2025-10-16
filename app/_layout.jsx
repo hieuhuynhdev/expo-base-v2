@@ -1,6 +1,6 @@
-import React from "react";
 import { Icon, Label, NativeTabs } from "expo-router/unstable-native-tabs";
 
+// layouts
 import { RootProvider } from "@/layouts/Providers/RootProvider";
 
 export default function RootLayout() {
