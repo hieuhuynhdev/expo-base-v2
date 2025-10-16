@@ -1,4 +1,4 @@
-import { Paragraph, SizableText, Text, XStack, YStack } from "tamagui";
+import { Paragraph, SizableText, XStack, YStack } from "tamagui";
 
 export const TextScreen = () => {
   return (

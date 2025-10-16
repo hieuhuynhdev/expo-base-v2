@@ -1,33 +1,39 @@
-import { Button, Host, VStack } from "@expo/ui/swift-ui";
-import { useRouter } from "expo-router";
+import { useLayoutEffect } from "react";
+import { useNavigation, useRouter } from "expo-router";
+
+import { Button, YStack } from "tamagui";
 
 export const IndexScreen = () => {
   // -- route --
   const router = useRouter();
 
+  // -- navigation --
+  const navigation = useNavigation();
+
+  useLayoutEffect(() => {
+    navigation.setOptions({ title: "Development" });
+  }, [navigation]);
+
   return (
-    <Host style={{ flex: 1 }}>
-      <VStack spacing={12}>
-        <Button
-          variant="glassProminent"
-          onPress={() => router.push("/development/button")}
-        >
-          Button
-        </Button>
-        <Button
-          variant="glassProminent"
-          onPress={() => router.push("/development/slider")}
-        >
-          Slider
-        </Button>
-        <Button
-          variant="glassProminent"
-          onPress={() => router.push("/development/tamagui")}
-        >
-          Tamagui
-        </Button>
-      </VStack>
-    </Host>
+    <YStack f={1} p="$4" gap="$3">
+      {/* form */}
+      <Button
+        onPress={() => router.push("/development/form")}
+        themeInverse
+        size="$3"
+      >
+        Form
+      </Button>
+
+      {/* notification */}
+      <Button
+        onPress={() => router.push("/tamagui/text")}
+        themeInverse
+        size="$3"
+      >
+        Notification
+      </Button>
+    </YStack>
   );
 };
 

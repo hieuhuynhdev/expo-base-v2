@@ -1,7 +1,7 @@
 import { useLayoutEffect } from "react";
 import { useNavigation, useRouter } from "expo-router";
 
-import { Button, Text, YStack } from "tamagui";
+import { Button, YStack } from "tamagui";
 
 export const IndexScreen = () => {
   // -- route --
@@ -16,7 +16,7 @@ export const IndexScreen = () => {
 
   return (
     <YStack f={1} p="$4" gap="$3">
-      <Text>Tamagui UI Kit</Text>
+      {/* text */}
       <Button
         onPress={() => router.push("/tamagui/text")}
         themeInverse
@@ -24,6 +24,8 @@ export const IndexScreen = () => {
       >
         Text
       </Button>
+
+      {/* button */}
       <Button
         onPress={() => router.push("/tamagui/button")}
         themeInverse

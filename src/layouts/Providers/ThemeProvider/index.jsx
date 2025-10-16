@@ -1,10 +1,16 @@
-import { defaultConfig } from "@tamagui/config/v4";
-import { createTamagui, TamaguiProvider } from "tamagui";
-
-const config = createTamagui(defaultConfig);
+import { TamaguiProvider, Theme } from "tamagui";
+import tamaguiConfig from "../../../../tamagui.config";
+import { useColorScheme } from "react-native";
 
 export const ThemeProvider = ({ children }) => {
-  <TamaguiProvider config={config}>{children}</TamaguiProvider>;
+  const scheme = useColorScheme();
+  const themeName = scheme === "dark" ? "dark" : "light";
+
+  return (
+    <TamaguiProvider config={tamaguiConfig}>
+      <Theme name={themeName}>{children}</Theme>
+    </TamaguiProvider>
+  );
 };
 
 export default ThemeProvider;
