@@ -1,9 +1,20 @@
-import { Paragraph, SizableText, XStack, YStack } from "tamagui";
+import { Paragraph, SizableText, Text, XStack, YStack } from "tamagui";
 
 export const TextScreen = () => {
   return (
     <YStack gap="$3" p="$4" alignItems="center">
-      <SizableText size="$10">SizableText</SizableText>
+      <Text
+        color="$red10"
+        fontFamily="$body"
+        fontSize={20}
+        hoverStyle={{
+          color: "$colorHover",
+        }}
+      >
+        Error Text
+      </Text>
+      <SizableText size="$3">SizableText</SizableText>
+      <SizableText size="$10">LargeText</SizableText>
       <XStack>
         <SizableText theme="alt1" size="$3">
           alt1

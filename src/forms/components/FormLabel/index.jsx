@@ -1,12 +1,14 @@
 import { Label } from "tamagui";
-import { cn } from "@/lib/utils";
 
-const FormLabel = ({ className, children, error }) => {
+export const FormLabel = ({ children, error, htmlFor }) => {
   return (
-    <Label className={cn(error && "text-destructive", className)}>
+    <Label
+      htmlFor={htmlFor}
+      color={error ? "$red10" : "$color"}
+      fontWeight="500"
+    >
       {children}
     </Label>
   );
 };
-
-export { FormLabel };
+export default FormLabel;

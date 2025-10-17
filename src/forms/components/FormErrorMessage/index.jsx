@@ -1,16 +1,10 @@
-import Animated, { FadeInDown, FadeOut } from "react-native-reanimated";
+import { Text } from "tamagui";
 
 const FormErrorMessage = ({ message }) => {
   return (
-    <Animated.Text
-      entering={FadeInDown}
-      exiting={FadeOut.duration(275)}
-      className="text-destructive text-sm native:px-1 py-1.5"
-      aria-invalid="true"
-      id="inputError"
-    >
+    <Text color="$red10" marginTop="$2">
       {message}
-    </Animated.Text>
+    </Text>
   );
 };
 

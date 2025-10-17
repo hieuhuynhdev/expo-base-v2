@@ -1,24 +1,32 @@
-import { useFormContext, Controller } from "react-hook-form";
-import { Input } from "tamagui";
+import { useId } from "react";
+import { Controller, useFormContext } from "react-hook-form";
+import { Input, YStack } from "tamagui";
 
 // shared
 import { FormErrorMessage } from "@/forms/components/FormErrorMessage";
 import { FormLabel } from "@/forms/components/FormLabel";
 
-export const InputField = ({ className, name, inputProps, label }) => {
+export const InputField = ({ name, inputProps, label }) => {
   const { control, handleSubmit, handleSubmitCallback } = useFormContext();
+  const uuid = useId();
+  const inputId = `${name}-${uuid}`;
 
   return (
     <Controller
       control={control}
       name={name}
       render={({ field: { onChange, value, ref }, fieldState: { error } }) => (
-        <div className={className}>
+        <YStack>
           {/* label */}
-          {label && <FormLabel error={error}>{label}</FormLabel>}
+          {label && (
+            <FormLabel htmlFor={inputId} error={error}>
+              {label}
+            </FormLabel>
+          )}
 
           {/* input */}
           <Input
+            id={inputId}
             ref={ref}
             value={value}
             onChangeText={onChange}
@@ -30,7 +38,7 @@ export const InputField = ({ className, name, inputProps, label }) => {
 
           {/* error */}
           {error && <FormErrorMessage message={error.message ?? ""} />}
-        </div>
+        </YStack>
       )}
     />
   );
