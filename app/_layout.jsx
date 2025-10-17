@@ -1,6 +1,11 @@
-import { Icon, Label, NativeTabs } from "expo-router/unstable-native-tabs";
-
-// layouts
+import {
+  NativeTabs,
+  Icon,
+  Label,
+  VectorIcon,
+} from "expo-router/unstable-native-tabs";
+import MaterialIcons from "@expo/vector-icons/MaterialIcons";
+import { Platform } from "react-native";
 import { RootProvider } from "@/layouts/Providers/RootProvider";
 
 export default function RootLayout() {
@@ -9,17 +14,17 @@ export default function RootLayout() {
       <NativeTabs>
         <NativeTabs.Trigger name="home">
           <Label>Home</Label>
-          <Icon sf="house.fill" />
+          <Icon src={<VectorIcon family={MaterialIcons} name="home" />} />
         </NativeTabs.Trigger>
 
         <NativeTabs.Trigger name="tamagui">
           <Label>Tamagui</Label>
-          <Icon sf="uikit.fill" />
+          <Icon src={<VectorIcon family={MaterialIcons} name="apps" />} />
         </NativeTabs.Trigger>
 
         <NativeTabs.Trigger name="development">
           <Label>Development</Label>
-          <Icon sf="hammer.fill" />
+          <Icon src={<VectorIcon family={MaterialIcons} name="build" />} />
         </NativeTabs.Trigger>
       </NativeTabs>
     </RootProvider>
