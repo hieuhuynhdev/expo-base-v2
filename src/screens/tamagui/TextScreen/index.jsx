@@ -3,7 +3,7 @@ import { Paragraph, SizableText, XStack, YStack } from "tamagui";
 export const TextScreen = () => {
   return (
     <YStack gap="$3" p="$4" alignItems="center">
-      <SizableText size="$3">SizableText</SizableText>
+      <SizableText size="$10">SizableText</SizableText>
       <XStack>
         <SizableText theme="alt1" size="$3">
           alt1

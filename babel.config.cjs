@@ -1,18 +1,12 @@
 module.exports = (api) => {
   api.cache(true);
   return {
-    presets: [
-      ["babel-preset-expo", { jsxImportSource: "nativewind" }],
-      [
-        "nativewind/babel",
-        {
-          allowModuleTransform: ["@expo/html-elements"],
-        },
-      ],
-    ],
+    presets: [["babel-preset-expo"]],
     plugins: [
       "@expo/html-elements/babel",
-      "@tamagui/babel-plugin",
+      // '@tamagui/babel-plugin',
+      // ["tamagui", { components: ["tamagui"], config: "./tamagui.config.js" }],
+      "react-native-reanimated/plugin",
     ],
   };
 };

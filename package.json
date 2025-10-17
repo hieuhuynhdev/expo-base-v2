@@ -21,7 +21,7 @@
     "@react-navigation/elements": "^2.6.3",
     "@react-navigation/native": "^7.1.8",
     "@tamagui/animations-react-native": "^1.135.2",
-    "@tamagui/babel-plugin": "^1.135.2",
+    "@tamagui/babel-plugin": "^1.135.3",
     "@tamagui/config": "^1.135.2",
     "@tamagui/font-inter": "^1.135.2",
     "@tamagui/lucide-icons": "^1.135.2",
