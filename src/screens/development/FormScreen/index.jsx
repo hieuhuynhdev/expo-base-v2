@@ -5,6 +5,7 @@ import { Button, Form, YStack } from "tamagui";
 
 // forms
 import InputField from "@/forms/fields/InputField";
+import InputPasswordField from "@/forms/fields/InputPasswordField";
 
 // form schema
 const formSchema = joi.object({
@@ -28,10 +29,10 @@ const LoginForm = () => {
           />
 
           {/* password */}
-          <InputField
+          <InputPasswordField
             name="password"
             label="Password"
-            inputProps={{ placeholder: "Password" }}
+            inputProps={{ placeholder: "Password", secureTextEntry: true }}
           />
         </YStack>
 

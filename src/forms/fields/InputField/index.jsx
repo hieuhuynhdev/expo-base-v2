@@ -7,9 +7,12 @@ import { FormErrorMessage } from "@/forms/components/FormErrorMessage";
 import { FormLabel } from "@/forms/components/FormLabel";
 
 export const InputField = ({ name, inputProps, label }) => {
-  const { control, handleSubmit, handleSubmitCallback } = useFormContext();
+  // -- input id --
   const uuid = useId();
   const inputId = `${name}-${uuid}`;
+
+  // -- form --
+  const { control, handleSubmit, handleSubmitCallback } = useFormContext();
 
   return (
     <Controller

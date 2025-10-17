@@ -5,7 +5,7 @@ export const ButtonScreen = () => {
   return (
     <YStack gap="$3" padding="$4">
       <Button>Plain</Button>
-      <Button alignSelf="center" icon={Airplay} size="$6">
+      <Button alignSelf="center" icon={Airplay} size="$6" >
         Large
       </Button>
       <XStack gap="$2" justifyContent="center">
