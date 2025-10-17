@@ -15,7 +15,7 @@ export const IndexScreen = () => {
   }, [navigation]);
 
   return (
-    <YStack f={1} p="$4" gap="$3">
+    <YStack flex={1} padding="$4" gap="$3">
       {/* text */}
       <Button
         onPress={() => router.push("/tamagui/text")}

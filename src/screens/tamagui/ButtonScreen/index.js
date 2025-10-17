@@ -3,7 +3,7 @@ import { Button, XGroup, XStack, YStack } from "tamagui";
 
 export const ButtonScreen = () => {
   return (
-    <YStack gap="$3" p="$4">
+    <YStack gap="$3" padding="$4">
       <Button>Plain</Button>
       <Button alignSelf="center" icon={Airplay} size="$6">
         Large
