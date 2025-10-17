@@ -14,7 +14,7 @@ export const HomeLayout = () => {
       <Stack.Screen
         name="index"
         options={{
-          headerLargeTitle: true,
+          headerLargeTitle: false,
           headerTransparent: false,
           headerTintColor: theme === "dark" ? "white" : "black",
           headerLargeStyle: { backgroundColor: "transparent" },

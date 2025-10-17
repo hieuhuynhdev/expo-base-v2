@@ -14,7 +14,7 @@ export const DevelopmentIosLayout = () => {
       <Stack.Screen
         name="index"
         options={{
-          headerLargeTitle: true,
+          headerLargeTitle: false,
           headerTransparent: true,
           headerTintColor: theme === "dark" ? "white" : "black",
           headerLargeStyle: { backgroundColor: "transparent" },

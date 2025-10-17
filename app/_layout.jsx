@@ -1,12 +1,11 @@
+import { RootProvider } from "@/layouts/Providers/RootProvider";
+import MaterialIcons from "@expo/vector-icons/MaterialIcons";
 import {
-  NativeTabs,
   Icon,
   Label,
+  NativeTabs,
   VectorIcon,
 } from "expo-router/unstable-native-tabs";
-import MaterialIcons from "@expo/vector-icons/MaterialIcons";
-import { Platform } from "react-native";
-import { RootProvider } from "@/layouts/Providers/RootProvider";
 
 export default function RootLayout() {
   return (
