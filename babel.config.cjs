@@ -4,8 +4,8 @@ module.exports = (api) => {
     presets: [["babel-preset-expo"]],
     plugins: [
       "@expo/html-elements/babel",
-      // '@tamagui/babel-plugin',
-      // ["tamagui", { components: ["tamagui"], config: "./tamagui.config.js" }],
+      '@tamagui/babel-plugin',
+      ["tamagui", { components: ["tamagui"], config: "./tamagui.config.js" }],
       "react-native-reanimated/plugin",
     ],
   };
