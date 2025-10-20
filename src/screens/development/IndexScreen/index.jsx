@@ -27,7 +27,7 @@ export const IndexScreen = () => {
 
       {/* notification */}
       <Button
-        onPress={() => router.push("/tamagui/text")}
+        onPress={() => router.push("/development/notification")}
         themeInverse
         size="$3"
       >

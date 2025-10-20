@@ -43,3 +43,10 @@ app-example
 # generated native folders
 /ios
 /android
+
+# local env files
+.env*.local
+.env
+
+# service keys
+service_keys
