@@ -18,15 +18,6 @@ export const IndexScreen = () => {
     <YStack flex={1} padding="$4" gap="$3">
       {/* text */}
       <Button
-        onPress={() => router.push("/tamagui/liquid-glass")}
-        themeInverse
-        size="$3"
-      >
-        Liquid glass
-      </Button>
-
-      {/* text */}
-      <Button
         onPress={() => router.push("/tamagui/text")}
         themeInverse
         size="$3"
